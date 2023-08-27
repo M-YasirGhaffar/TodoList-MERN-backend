@@ -1,79 +1,78 @@
 # ToDoList MERN Backend
 
-This is the backend for the ToDoList MERN (MongoDB, Express, React, Node.js) application. It provides the necessary APIs to manage and manipulate ToDo items stored in a MongoDB database.
+![Node.js](https://img.shields.io/badge/Node.js-v14.17.6-green)
+![Express](https://img.shields.io/badge/Express-v4.17.1-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-yellow)
+![License](https://img.shields.io/badge/license-MIT-orange)
 
-## Table of Contents
+This is the backend part of a MERN (MongoDB, Express.js, React.js, Node.js) ToDo List application. It provides the API endpoints required for managing tasks in the ToDo list.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
+## Getting Started
 
-## Installation
+Follow these steps to set up and run the backend for the ToDo List application:
 
-1. Clone the repository to your local machine:
+### Prerequisites
 
-   ```
-   git clone https://github.com/your-username/ToDoList-MERN-Backend.git
+Make sure you have the following software installed on your system:
+
+- [Node.js](https://nodejs.org/) (v14.17.6 or higher)
+- [MongoDB](https://www.mongodb.com/) (Community Edition)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/M-YasirGhaffar/TodoList-MERN-backend.git
    ```
 
 2. Navigate to the project directory:
 
-   ```
-   cd ToDoList-MERN-Backend
+   ```bash
+   cd TodoList-MERN-backend
    ```
 
-3. Install the required dependencies using npm:
+3. Install the required dependencies:
 
-   ```
+   ```bash
    npm install
    ```
 
-4. Create a `.env` file in the root directory and add your MongoDB connection URL:
+4. Create a `.env` file in the root directory and set the following environment variables:
 
    ```
-   MONGODB_URL=your_mongodb_connection_url_here
+   MONGODB_URL=<your-mongodb-connection-string>
+   PORT=<port-number>
    ```
 
-## Usage
+   Replace `<your-mongodb-connection-string>` with your MongoDB connection string and `<port-number>` with the desired port number.
+
+### Usage
 
 1. Start the server:
 
-   ```
+   ```bash
    npm start
    ```
 
-2. The server will start and connect to the MongoDB database. You will see a message indicating a successful connection to the database.
+   This will start the Express.js server, and you will see the message "Connected to MongoDB" in the console if the connection is successful.
 
-3. The API endpoints are now available for use.
+2. The server will be running at `http://localhost:<port-number>`.
 
 ## API Endpoints
 
-The backend provides the following API endpoints:
-
-- `GET /` - Retrieves all ToDo items.
-- `POST /save` - Saves a new ToDo item.
-- `POST /update` - Updates a ToDo item.
-- `POST /delete` - Deletes a ToDo item.
-
-Refer to the [todoroutes.js](/routes/todoRoutes.js) file for more details about the API routes and their corresponding controller functions.
-
-## Technologies Used
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
+- **GET** `/`: Get a list of all ToDo items.
+- **POST** `/save`: Create a new ToDo item.
+  - Body: `{ "text": "Your task description" }`
+- **POST** `/update`: Update an existing ToDo item.
+  - Body: `{ "_id": "item-id", "text": "Updated task description" }`
+- **POST** `/delete`: Delete a ToDo item.
+  - Body: `{ "_id": "item-id" }`
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them.
-4. Push your changes to your forked repository.
-5. Create a pull request to the original repository.
+Contributions are welcome! If you find any issues or want to add improvements, feel free to fork this repository and create a pull request.
 
 ## License
+
+This project is licensed under the [MIT License](LICENSE).
